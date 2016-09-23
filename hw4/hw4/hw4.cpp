@@ -43,7 +43,7 @@ void game(vector<int> combo) {
 		cin >> guess_buffer;
 
 		if (GetNumberOfDigits(guess_buffer) > combo.size()) {
-			cout << "You can only enter " << combo.size() << " number of digits.";
+			cout << "You can only enter " << combo.size() << " digits.";
 			continue;
 		}
 
