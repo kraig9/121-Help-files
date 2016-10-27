@@ -4,6 +4,7 @@
 
 
 #include "main.h"
+using namespace std;
 
 class Customer {
 	//data members

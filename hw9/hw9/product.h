@@ -5,6 +5,8 @@
 
 #include "main.h"
 
+using namespace std;
+
 class Product{
 	//data members
 	int productID;
