@@ -1,4 +1,8 @@
 #pragma once
+#ifndef CUSTOMER_H
+#define CUSTOMER_H
+
+
 #include "main.h"
 
 class Customer {
@@ -23,3 +27,4 @@ public:
 	void setCredit(bool hasCredit);
 	double getBalance();
 };
+#endif

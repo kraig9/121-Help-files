@@ -1,4 +1,8 @@
 #pragma once
+#ifndef PRODUCT_H
+#define PRODUCT_H
+
+
 #include "main.h"
 
 class Product{
@@ -12,7 +16,7 @@ class Product{
 
 public:
 	//constructor
-	Product(int productID, string productName) : productID(productID), productName(productName) {
+	Product(int prodID, string prodName) : productID(prodID), productName(prodName) {
 		numSold = 0;
 		totalPaid = 0;
 		inventory = 0;
@@ -27,3 +31,4 @@ public:
 	double getTotalPaid();
 	int getInventoryCount();
 };
+#endif
