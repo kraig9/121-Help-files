@@ -25,10 +25,12 @@ int Product::getInventoryCount() {
 void Product::addShipment(int shimpmentQuantity, double shipmentCost) {
 	Product::inventory = Product::inventory + shimpmentQuantity;
 	Product::totalPaid = Product::totalPaid + shipmentCost;
+	if (Product::inventory < 0 || Product::totalPaid < 0) throw(1);
 }
 void Product::reduceInventory(int purchaseQuantity) {
 	Product::inventory = Product::inventory - purchaseQuantity;
 	Product::numSold = purchaseQuantity;
+	if (Product::inventory < 0)throw(2);
 }
 double Product::getPrice() {
 	double price;

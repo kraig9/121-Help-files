@@ -19,7 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{A4F0A89A-03FA-454C-96C1-D3FEF64E3C49}</ProjectGuid>
+    <ProjectGuid>{2783B4A9-914C-4E39-B9B4-EDF8E9EC4A6D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>hw10</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>

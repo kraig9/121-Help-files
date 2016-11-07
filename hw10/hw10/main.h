@@ -7,6 +7,7 @@
 #include <string>
 #include <vector>
 #include <list>
+#include <cerr>
 #include "product.h"
 #include "customer.h"
 #include "store.h"

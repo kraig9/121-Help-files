@@ -21,6 +21,7 @@ double Customer::getBalance() {
 //hw10
 void Customer::processPayment(double amount) {
 	balance = amount + balance;
+	if (Customer::balance < 0)throw(1);
 }
 void Customer::processPurchase(double amount, Product product) {
 	if (credit == true) {
@@ -30,7 +31,7 @@ void Customer::processPurchase(double amount, Product product) {
 		balance = balance - amount;
 	}
 	else {
-		//throw exception
+		throw(2);
 	}
 	productsPurchased.push_back(product);
 }
