@@ -13,7 +13,7 @@ class Customer {
 	bool credit;
 	double balance;
 	string name;
-	list<typename Product> productsPurchased;
+	vector<Product> productsPurchased;
 
 public:
 	//constructor
@@ -23,12 +23,13 @@ public:
 	}
 
 	//public functions
-	string getName();
+	string getName() const;
 	void setName(string name);
-	int getID();
-	bool getCredit();
+	void setID(int customerID);
+	int getID() const;
+	bool getCredit() const;
 	void setCredit(bool hasCredit);
-	double getBalance();
+	double getBalance() const;
 
 	//hw10
 	void processPayment(double amount);

@@ -25,17 +25,22 @@ public:
 	}
 
 	//public functions
-	string getDescription();
+	string getDescription() const;
 	void setDescription(string description);
-	string getName();
-	int getID();
-	int getNumberSold();
-	double getTotalPaid();
-	int getInventoryCount();
+	string getName()const;
+	void setName(string name);
+	int getID() const;
+	void setID(int productID);
+	int getNumberSold() const;
+	void setNumberSold(int numSold);
+	double getTotalPaid() const;
+	void setTotalPaid(double totalPaid);
+	int getInventoryCount() const;
+	void setInventoryCount(int inventory);
 	//hw10
 	void addShipment(int shimpmentQuantity, double shipmentCost);
 	void reduceInventory(int purchaseQuantity);
-	double getPrice();
+	double getPrice() const;
 };
 ostream& operator<<(ostream& os, Product product);
 #endif

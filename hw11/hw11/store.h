@@ -8,12 +8,14 @@ using namespace std;
 
 class Store {
 	string name;
-	list<Product> products;
-	list<Customer> customers;
+	vector<Product> products;
+	vector<Customer> customers;
 
 public:
+	Store() {};
 	Store(string name) : name(name) {}
 
+	string getName();
 	void setName(string name);
 	void addProduct(int productID, string productName);
 	void addCustomer(int customerID, string customerName);

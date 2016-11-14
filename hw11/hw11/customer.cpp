@@ -1,47 +1,54 @@
 #include "customer.h"
 
-string Customer::getName() {
-	return Customer::name;
+class problem :public runtime_error {
+public:problem(string prob) :runtime_error(prob) {}
+};
+
+string Customer::getName() const{
+	return name;
 }
 void Customer::setName(string name) {
-	Customer::name = name;
+	this->name = name;
 }
-int Customer::getID() {
-	return Customer::customerID;
+void Customer::setID(int customerID) {
+	this->customerID = customerID;
 }
-bool Customer::getCredit() {
-	return Customer::credit;
+int Customer::getID() const{
+	return customerID;
+}
+bool Customer::getCredit() const{
+	return credit;
 }
 void Customer::setCredit(bool hasCredit) {
-	Customer::credit = hasCredit;
+	this->credit = hasCredit;
 }
-double Customer::getBalance() {
-	return Customer::balance;
+double Customer::getBalance() const{
+	return balance;
 }
 //hw10
 void Customer::processPayment(double amount) {
-	balance = amount + balance;
-	if (Customer::balance < 0)throw(1);
+	if (amount < 0) throw problem("amount is negative. ");
+	balance += amount;
 }
 void Customer::processPurchase(double amount, Product product) {
-	if (credit == true) {
-		balance = balance - amount;
+	bool b = false;
+	for (int i = 0; i < productsPurchased.size(); i++) {
+		if (product.getID() == productsPurchased[i].getID()) {
+			b = true;
+		}
 	}
-	else if (credit != true && balance >= amount) {
-		balance = balance - amount;
-	}
-	else {
-		throw(2);
-	}
-	productsPurchased.push_back(product);
+	if (b == false)productsPurchased.push_back(product);
+	if (amount < 0)throw problem("amount is negative ");
+	if (credit)balance -= amount;
+	else if (balance >= amount)balance -= amount;
+	else throw problem("credit is negative, so balance can't be negative. ");
 }
 void Customer::listProductsPurchased(ostream& os) {
-	for (list<Product>::iterator it = productsPurchased.begin(); it != productsPurchased.end();++it) {
-		cout << *it;
+	for (int i = 0; i < productsPurchased.size(); i++) {
+		os << productsPurchased[i] << endl;
 	}
 }
 ostream& operator<<(ostream& os, Customer customer) {
 	os << "Customer name: " << customer.getName() << endl << "Customer ID: " << customer.getID() << endl << "Customer credit: " << customer.getCredit() << "Customer balance: " << customer.getBalance() << endl;
-
 	return os;
 }
